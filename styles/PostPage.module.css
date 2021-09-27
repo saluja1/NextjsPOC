@@ -1,0 +1,15 @@
+.PostContainer {
+	padding: 50px 0;
+}
+
+.box {
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+	position: relative;
+}
+
+.appLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

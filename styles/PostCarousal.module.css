@@ -1,0 +1,24 @@
+.pIcon {
+    font-size: 25px;
+    z-index: 56;
+    position: absolute;
+    color: #fee000;
+    top: 10px;
+    left: 20px;
+}
+
+.nextbtn, .prevbtn{    
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    color: #fee000!important;
+    background: rgba(0,0,0,.8);
+    border-radius: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    border: 0
+}
+.nextbtn {
+    right: 0
+}

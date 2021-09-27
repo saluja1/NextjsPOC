@@ -1,0 +1,46 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #111;
+}
+
+a, a:hover, button:hover {
+	cursor: pointer;
+  text-decoration: none;
+}
+section .swiper{
+  padding: 20px 0;
+}
+.swiper-button-disabled {
+	opacity: 0.5
+}
+.swiper-slide:hover {
+  z-index: 10
+}
+
+@media all and (max-width: 480px) {
+  main {
+    margin-top: 80px;
+  }
+}
+
+@import "Button.css";
+
+@import "MobileMenu.css";
+
+@import "Header.module.css";
+
+@import "Footer.module.css";
+
+@import "socialmediabar.css";
+

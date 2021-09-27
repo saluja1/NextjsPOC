@@ -1,0 +1,24 @@
+footer .item:nth-of-type(3):after {
+    content: "";
+    border-right: 1px solid #fff;
+    padding-right: 15px;
+}
+footer .item:nth-of-type(3):before {
+    content: "";
+    border-left: 1px solid #fff;
+    padding-left: 15px;
+}
+
+@media all and (max-width: 775px) {
+
+  footer ul.menu {
+    padding: 0 20px;
+  }
+  footer .menu > li {
+    text-align: center;
+  }
+
+  footer .menu > li:first-child {
+    flex: 1 0 100%;
+  }
+}
