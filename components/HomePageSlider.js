@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
-
 import 'swiper/css';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,13 +13,8 @@ import HomepageSliderDesign from "./HomepageSliderDesign";
 import { GetDataServiceFuntion } from "../service/ServiceFuntions";
 
 
-
 const HomePageSlider = props => {
-    const [apidata, setApiData] = useState([])
-    useEffect(() => {	
-		const sliderData = GetDataServiceFuntion(props.apiUrl);
-		sliderData.then(x => setApiData(x.data))
-    }, []);
+    const [apidata, setApiData] = useState(props.carousalData.data)
 
     function handleMouseOver(){
 		document.querySelector(".bannerSlider").swiper.autoplay.stop();
@@ -42,15 +36,13 @@ const HomePageSlider = props => {
 		      	onSlideChange={() => console.log('slide change')}
 		    	onSwiper={(swiper) => console.log(swiper)}
 				autoplay={{
-					delay: 2500,
+					delay: 25000000,
 					disableOnInteraction: true
 				}}
-
 		    >
 				{apidata.map( (data, index) => <SwiperSlide key={index}> <HomepageSliderDesign sliderData={data} /> </SwiperSlide>)}
     		</Swiper>
 	    </div>
-
 )};
 
 export default HomePageSlider;

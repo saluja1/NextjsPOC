@@ -1,13 +1,14 @@
 import Head from "next/head";
-import Header from "./Header";
-import Footer from "./Footer";
 import styled from 'styled-components';
 
+import Header from "./Header";
+import Footer from "./Footer";
+
 const LayoutContainer = styled.div``
+
 const MainContainer = styled.main`
   color: #fff;
 `
-
 const Layout = props => {
   const appTitle = `Nextjs POC`;
 

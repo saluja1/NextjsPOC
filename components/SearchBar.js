@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react"
-
 import Link from "next/link";
 import styled from 'styled-components';
 
 import styles from "../styles/PostPage.module.css";
 import { GetDataServiceFuntion } from "../service/ServiceFuntions";
-
 import SliderUnit from "../components/SliderUnit";
 
 const SearchInput = styled.input`
@@ -46,7 +44,6 @@ const AppLayout = styled.div`
 
 `;
 
-
 const PostSectionHeadingContainer = styled.div`
     margin: 2% auto;
     padding: 20px;
@@ -71,13 +68,11 @@ const PostSectionUnderline = styled.div`
 `;
 
 const SearchBar = props => {
-	const [apidata, setApiData] = useState([])
-	const apiUrl="https://www.scoopwhoop.com/uns/api/v1/videos//?filter_type="
-    const[filterData, setFilterData] = useState([])
-    useEffect(() => {
-		const sliderData = GetDataServiceFuntion(apiUrl);
-		sliderData.then(x => { setApiData(x.data); setFilterData(x.data); } )
 
+	const [apidata, setApiData] = useState(props.apiData.data)
+    const[filterData, setFilterData] = useState(props.apiData.data)
+
+    useEffect(() => {
 	}, []);
 
     function onChangeHandler(event){
@@ -86,17 +81,18 @@ const SearchBar = props => {
     }
 
 	return <>
-		<br/><br/><br/><br/>
-      <SearchInput type="text" id="searchInput" placeholder="Search.." onChange= {(e)=> onChangeHandler(e)} />
-      <PostSectionHeadingContainer>
-        <PostSectionHeading>Results</PostSectionHeading>
-        <PostSectionUnderline />
-      </PostSectionHeadingContainer>
-      <section className={styles.PostContainer}> 
-  			<AppLayout className={styles.appLayout}>
-  				{filterData.map( (data, index) =>   <div key={index} className={styles.box}> <SliderUnit sliderData={data} /> </div> )}
-  			</AppLayout>
-      </section>  
+	    <div className="mt-80">	
+          <SearchInput type="text" id="searchInput" placeholder="Search.." onChange= {(e)=> onChangeHandler(e)} />
+          <PostSectionHeadingContainer>
+            <PostSectionHeading>Results</PostSectionHeading>
+            <PostSectionUnderline />
+          </PostSectionHeadingContainer>
+          <section className={styles.PostContainer}> 
+      			<AppLayout className={styles.appLayout}>
+      				{filterData.map( (data, index) =>   <div key={index} className={styles.box}> <SliderUnit sliderData={data} /> </div> )}
+      			</AppLayout>
+          </section>  
+        </div>  
 	</>
 };
 

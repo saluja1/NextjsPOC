@@ -2,9 +2,9 @@
 
 @import "Button.css";
 
-@import "MobileMenu.css";
-
 @import "Header.module.css";
+
+@import "MobileMenu.css";
 
 @import "Footer.module.css";
 

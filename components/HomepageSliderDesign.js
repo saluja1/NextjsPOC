@@ -79,7 +79,7 @@ const SliderUnit = props => {
 		          </div>
 		        </SliderItemContent>  
 	        </SliderItem>
-		 </>
+		</>
 )};
 
 export default SliderUnit;

@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react"
+import styled from 'styled-components';
 
 import Layout from "../../components/Layout";
 import PostSlider from "../../components/PostSlider";
 import SliderUnit from "../../components/SliderUnit";
-
 import styles from "../../styles/PostPage.module.css";
-
-import styled from 'styled-components';
-
-import { GetDataServiceFuntion } from "../../service/ServiceFuntions";
 
 const AppLayout = styled.div`
     display: grid;
@@ -53,16 +49,18 @@ function Post(props) {
 	const [catData, setCatData] = useState(props.data)
 
 	return (<Layout>
-		<br/><br/><br/><br/>
-      <PostSectionHeadingContainer>
-        <PostSectionHeading>{(props.id).toUpperCase()}</PostSectionHeading>
-        <PostSectionUnderline />
-      </PostSectionHeadingContainer>
-      <section className={styles.PostContainer}> 
-  			<AppLayout className={styles.appLayout}>
-  				{catData.data.map( (data, index) =>   <div key={index} className={styles.box}> <SliderUnit sliderData={data} /> </div> )}
-  			</AppLayout>
-      </section>  
+      <div className="mt-80">
+        <br/>
+        <PostSectionHeadingContainer>
+          <PostSectionHeading>{(props.id).toUpperCase()}</PostSectionHeading>
+          <PostSectionUnderline />
+        </PostSectionHeadingContainer>
+        <section className={styles.PostContainer}> 
+    			<AppLayout className={styles.appLayout}>
+    				{catData.data.map( (data, index) =>   <div key={index} className={styles.box}> <SliderUnit sliderData={data} /> </div> )}
+    			</AppLayout>
+        </section>  
+      </div>  
 	</Layout>
 )}
 
