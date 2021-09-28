@@ -1,10 +1,11 @@
 import Layout from "../components/Layout";
 
 const SubscriberView = props => <Layout>
-	<br/><br/><br/><br/>
-	<h1>
-		SubscriberView
-	</h1>
+	<div className="mt-80">
+		<h1>
+			SubscriberView
+		</h1>
+	</div>	
 </Layout>;
 
 export default SubscriberView;

@@ -5,11 +5,17 @@ import styled from 'styled-components';
 
 import logo from "../public/logo.svg";
 import NavButton from "./NavButton";
+import SearchBar from "./SearchBar";
 
 const CopyRight = styled.span`
 	color: #fee000;
 	padding-left: 25px;
 	font-size: 12px
+`
+
+const SearchIcon = styled.li`
+  color: #fff;
+  font-size: 24px;
 `
 
 const Hamburger = styled.li`
@@ -110,7 +116,9 @@ const NavBar = props => {
 					<a href=""> <img src='/logo.svg' alt='Header Logo' /> </a> 
 				</Link>
 				<br/>
+					    { props.type == "footer" &&
 				<CopyRight> @copy 2021 ScoopWhoop Media Pvt Ltd</CopyRight>
+			}
 			</li>
 
 		    {props.navButtons.map(button => (
@@ -123,10 +131,19 @@ const NavBar = props => {
 		      />
 		    ))}
 		    { props.type == "header" && 
-		    <Hamburger id="hamburger" onClick={hamburgerClickHandler}>
-		      <div></div>
-		    </Hamburger>	    
+				<>
+				    <Hamburger id="hamburger" onClick={hamburgerClickHandler}>
+				      <div></div>
+				    </Hamburger>	    
+
+				    <SearchIcon className="NavButton item">
+				    	<Link href="/search">
+							<i className="fas fa-search"></i>
+						</Link>
+				    </SearchIcon>
+			    </>
 		    }
+
 	    </ul>
 	    { props.type == "header" &&
 		  <OverlayMenu id="overlay">
@@ -139,6 +156,12 @@ const NavBar = props => {
 		        secondaryButton={button.secondaryButton}
 		      />
 		    ))}
+		    <SearchIcon className="NavButton item">
+		    	<Link href="/search">
+					<i className="fas fa-search"></i>
+				</Link>
+		    </SearchIcon>
+
 		  </OverlayMenu>
 		}  
 	</>

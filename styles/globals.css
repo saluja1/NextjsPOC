@@ -26,6 +26,11 @@ a, a:hover, button:hover {
 	cursor: pointer;
   text-decoration: none;
 }
+
+.mt-80 {
+  margin-top: 80px;
+}
+
 section .swiper{
   padding: 20px 0;
 }
@@ -36,9 +41,12 @@ section .swiper{
   z-index: 10
 }
 .bannerSlider .swiper-pagination.swiper-pagination-bullets {
-  text-align: right;
-  padding: 0 30px;
-  bottom: 17.5%;
+    bottom: 17.5%;
+    position: absolute;
+    width: 20px;
+    left: 94%;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 .bannerSlider .swiper-pagination-bullet {
   background: #eee;
@@ -61,6 +69,9 @@ section .swiper{
   .bannerSlider .swiper-pagination.swiper-pagination-bullets {
     bottom: 0;
     text-align: center;
+    width: 100%;
+    left: auto;
+    top: auto;
   }
 }
 
