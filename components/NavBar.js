@@ -16,6 +16,9 @@ const CopyRight = styled.span`
 const SearchIcon = styled.li`
   color: #fff;
   font-size: 24px;
+  :hover {
+  	cursor: pointer
+  }
 `
 
 const Hamburger = styled.li`

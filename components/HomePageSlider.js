@@ -42,7 +42,7 @@ const HomePageSlider = props => {
 		      	onSlideChange={() => console.log('slide change')}
 		    	onSwiper={(swiper) => console.log(swiper)}
 				autoplay={{
-					delay: 200000,
+					delay: 2500,
 					disableOnInteraction: true
 				}}
 
