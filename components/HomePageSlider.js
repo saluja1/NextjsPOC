@@ -33,10 +33,10 @@ const HomePageSlider = props => {
 	    		className="bannerSlider"
 				pagination={{"clickable": true}}
 		      	slidesPerView={1}
-		      	onSlideChange={() => console.log('slide change')}
-		    	onSwiper={(swiper) => console.log(swiper)}
+		      	onSlideChange={() => console.log('')}
+		    	onSwiper={(swiper) => console.log('')}
 				autoplay={{
-					delay: 25000000,
+					delay: 2500,
 					disableOnInteraction: true
 				}}
 		    >

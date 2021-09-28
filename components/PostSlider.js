@@ -69,8 +69,8 @@ const PostSlider = props => {
 		        slidesPerView={props.postPerSlide}
 				navigation={{nextEl: `.${props.sectionTitle}swiperButtonNext`,
 					prevEl: `.${props.sectionTitle}swiperButtonPrev` }}
-		        onSlideChange={() => console.log('slide change')}
-		        onSwiper={(swiper) => console.log(swiper)}
+		        onSlideChange={() => console.log('')}
+		        onSwiper={(swiper) => console.log('')}
 				breakpoints={{
 				    // when window width is >= 640px
 				    320: {
