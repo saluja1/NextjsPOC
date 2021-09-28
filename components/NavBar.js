@@ -6,6 +6,12 @@ import styled from 'styled-components';
 import logo from "../public/logo.svg";
 import NavButton from "./NavButton";
 
+const CopyRight = styled.span`
+	color: #fee000;
+	padding-left: 25px;
+	font-size: 12px
+`
+
 const Hamburger = styled.li`
   margin: 4%;
   opacity: 0.5;
@@ -98,11 +104,14 @@ const NavBar = props => {
 
 	return <>
 	  	<ul className="menu">
-			<Link href="/">
-				<li className="logo">
+
+			<li className="logo">
+				<Link href="/">
 					<a href=""> <img src='/logo.svg' alt='Header Logo' /> </a> 
-				</li>
-			</Link>
+				</Link>
+				<br/>
+				<CopyRight> @copy 2021 ScoopWhoop Media Pvt Ltd</CopyRight>
+			</li>
 
 		    {props.navButtons.map(button => (
 		      <NavButton

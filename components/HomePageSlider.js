@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
+
 import 'swiper/css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 import HomepageSliderDesign from "./HomepageSliderDesign";
 import { GetDataServiceFuntion } from "../service/ServiceFuntions";
 
 
-SwiperCore.use([Autoplay, Navigation]);
 
 const HomePageSlider = props => {
     const [apidata, setApiData] = useState([])
@@ -16,15 +22,30 @@ const HomePageSlider = props => {
 		sliderData.then(x => setApiData(x.data))
     }, []);
 
+    function handleMouseOver(){
+		document.querySelector(".bannerSlider").swiper.autoplay.stop();
+    }
+
+    function handleMouseOut(){
+	    document.querySelector(".bannerSlider").swiper.autoplay.start();
+    }
+
     return (
-    	<div>
+    	<div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
 	    	<Swiper
+				observer= {true}
+				observeParents= {true}
+				parallax={true}
+	    		className="bannerSlider"
+				pagination={{"clickable": true}}
 		      	slidesPerView={1}
-				navigation={{nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev'}}
 		      	onSlideChange={() => console.log('slide change')}
 		    	onSwiper={(swiper) => console.log(swiper)}
-			  	autoplay={{delay: 200000}}
+				autoplay={{
+					delay: 250000,
+					disableOnInteraction: true
+				}}
+
 		    >
 				{apidata.map( (data, index) => <SwiperSlide key={index}> <HomepageSliderDesign sliderData={data} /> </SwiperSlide>)}
     		</Swiper>

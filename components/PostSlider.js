@@ -66,7 +66,6 @@ const PostSlider = props => {
 
 		    <Swiper
 			    className={`${props.sectionTitle}Swiper`}
-			    pagination={{"clickable": true}}
 		        slidesPerView={props.postPerSlide}
 				navigation={{nextEl: `.${props.sectionTitle}swiperButtonNext`,
 					prevEl: `.${props.sectionTitle}swiperButtonPrev` }}
