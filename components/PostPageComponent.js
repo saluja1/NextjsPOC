@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react"
+
 import Link from "next/link";
 import styled from 'styled-components';
 
@@ -24,7 +26,7 @@ const PostSectionHeadingContainer = styled.div`
     padding: 20px;
 `;
 
-const PostSectionHeading = styled.div`
+const PostSectionHeading = styled.h1`
     font-family: Open Sans,sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -32,6 +34,8 @@ const PostSectionHeading = styled.div`
     line-height: 34px;
     color: #fff;
 `;
+
+
 
 const PostSectionUnderline = styled.div`
     background-color: #fee000;
@@ -43,19 +47,22 @@ const PostSectionUnderline = styled.div`
 `;
 
 
-const PostPageComponent = props => (
-  <>
+const PostPageComponent = props => {
+  const [postPageData, setPostPageData] = useState(props.postPageData.data)
+  const [postPageTitle, setPostPageTitle] = useState((props.postPageTitle).toUpperCase())
+
+  return <>
         <PostSectionHeadingContainer>
-          <PostSectionHeading>{(props.postPageTitle).toUpperCase()}</PostSectionHeading>
+          <PostSectionHeading>{postPageTitle}</PostSectionHeading>
           <PostSectionUnderline />
         </PostSectionHeadingContainer>
         <section className={styles.PostContainer}> 
           <AppLayout className={styles.appLayout}>
-            {props.postPageData.data.map( (data, index) =>   <div key={index} className={styles.box}> <SliderUnit sliderData={data} /> </div> )}
+            {postPageData.map( (data, index) =>   <div key={index} className={styles.box}> <SliderUnit sliderData={data} /> </div> )}
           </AppLayout>
         </section>  
   </>
 
-);
+};
 
 export default PostPageComponent;

@@ -4,15 +4,15 @@ import styled from 'styled-components';
 
 const SliderItemContainer = styled.div`
     position: relative;
-`
-const SliderItemImage = styled.img`
-    width: 97.5%;
     transition: transform .3s; /* Animation */
-    border-radius: 5px;
 	:hover{
     	transform: scale(1.1);
     	z-index: 3;
 	}
+`
+const SliderItemImage = styled.img`
+    width: 97.5%;
+    border-radius: 5px;
 `;
 const SliderItemContent = styled.div`
     position: absolute;

@@ -49,7 +49,7 @@ const PostSectionHeadingContainer = styled.div`
     padding: 20px;
 `;
 
-const PostSectionHeading = styled.div`
+const PostSectionHeading = styled.h1`
     font-family: Open Sans,sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -84,7 +84,7 @@ const SearchBar = props => {
 	    <div className="mt-80">	
           <SearchInput type="text" id="searchInput" placeholder="Search.." onChange= {(e)=> onChangeHandler(e)} />
           <PostSectionHeadingContainer>
-            <PostSectionHeading>Results</PostSectionHeading>
+            <PostSectionHeading>SEARCH RESULTS</PostSectionHeading>
             <PostSectionUnderline />
           </PostSectionHeadingContainer>
           <section className={styles.PostContainer}> 
